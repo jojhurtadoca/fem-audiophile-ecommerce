@@ -88,31 +88,31 @@
       },
       "space": {
         "100": {
-          "value": "-0.0021rem"
+          "value": "-0.021rem"
         },
         "200": {
-          "value": "-0.0025rem"
+          "value": "-0.025rem"
         },
         "300": {
-          "value": "0.01rem"
+          "value": "0.1rem"
         },
         "400": {
-          "value": "0.0115rem"
+          "value": "0.115rem"
         },
         "500": {
-          "value": "0.013rem"
+          "value": "0.13rem"
         },
         "600": {
-          "value": "0.015rem"
+          "value": "0.15rem"
         },
         "700": {
-          "value": "0.017rem"
+          "value": "0.17rem"
         },
         "800": {
-          "value": "0.02rem"
+          "value": "0.2rem"
         },
         "900": {
-          "value": "0.1rem"
+          "value": "1rem"
         }
       }
     }
