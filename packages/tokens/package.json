@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "chroma-js": "^2.4.2",
     "style-dictionary": "^3.7.1"
   }
 }
