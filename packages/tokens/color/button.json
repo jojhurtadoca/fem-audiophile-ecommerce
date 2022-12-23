@@ -1,0 +1,139 @@
+{
+  "color": {
+    "text": {
+      "button": {
+        "primary": {
+          "rest": {
+            "value": "{config.color.neutral.lightest.value}"
+          },
+          "active": {
+            "value": "{config.color.neutral.lightest.value}"
+          },
+          "focus": {
+            "value": "{config.color.neutral.lightest.value}"
+          }
+        },
+        "secondary": {
+          "rest": {
+            "value": "{config.color.neutral.darkest.value}"
+          },
+          "active": {
+            "value": "{config.color.neutral.lightest.value}"
+          },
+          "focus": {
+            "value": "{config.color.neutral.lightest.value}"
+          }
+        },
+        "tertiary": {
+          "rest": {
+            "value": "{config.color.neutral.darkest.value}",
+            "modify" : [
+              {
+                "type": "alpha",
+                "amount": 0.5
+              }
+            ]
+          },
+          "active": {
+            "value": "{config.color.primary.red.dark.value}"
+          },
+          "focus": {
+            "value": "{config.color.primary.red.dark.value}"
+          }
+        }
+      }
+    },
+    "background": {
+      "button": {
+        "primary": {
+          "rest": {
+            "value": "{config.color.primary.red.dark.value}"
+          },
+          "active": {
+            "value": "{config.color.primary.red.light.value}"
+          },
+          "focus": {
+            "value": "{config.color.primary.red.light.value}"
+          }
+        },
+        "secondary": {
+          "rest": {
+            "value": "{config.color.neutral.lightest.value}"
+          },
+          "active": {
+            "value": "{config.color.neutral.darkest.value}"
+          },
+          "focus": {
+            "value": "{config.color.neutral.darkest.value}"
+          }
+        },
+        "tertiary": {
+          "rest": {
+            "value": "{config.color.neutral.darkest.value}",
+            "modify" : [
+              {
+                "type": "alpha",
+                "amount": 0
+              }
+            ]
+          },
+          "active": {
+            "value": "{config.color.neutral.darkest.value}",
+            "modify" : [
+              {
+                "type": "alpha",
+                "amount": 0
+              }
+            ]
+          },
+          "focus": {
+            "value": "{config.color.neutral.darkest.value}",
+            "modify" : [
+              {
+                "type": "alpha",
+                "amount": 0
+              }
+            ]
+          }
+        }
+      }
+    },
+    "border": {
+      "button": {
+        "primary": {
+          "rest": {
+            "value": "{config.color.primary.red.dark.value}"
+          },
+          "active": {
+            "value": "{config.color.primary.red.dark.value}"
+          },
+          "focus": {
+            "value": "{config.color.primary.red.dark.value}"
+          }
+        },
+        "secondary": {
+          "rest": {
+            "value": "{config.color.neutral.darkest.value}"
+          },
+          "active": {
+            "value": "{config.color.neutral.lightest.value}"
+          },
+          "focus": {
+            "value": "{config.color.neutral.lightest.value}"
+          }
+        },
+        "tertiary": {
+          "rest": {
+            "value": "{config.color.primary.red.dark.value}"
+          },
+          "active": {
+            "value": "{config.color.primary.red.dark.value}"
+          },
+          "focus": {
+            "value": "{config.color.primary.red.dark.value}"
+          }
+        }
+      }
+    }
+  }
+}

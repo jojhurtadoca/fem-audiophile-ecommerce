@@ -1,0 +1,41 @@
+{
+  "config": {
+    "color": {
+      "primary": {
+        "red": {
+          "light": {
+            "value": "#fbaf85"
+          },
+          "dark": {
+            "value": "#d87d4a"
+          }
+        }
+      },
+      "accent": {
+        "red": {
+          "value": "cd2c2c"
+        }
+      },
+      "neutral": {
+        "lightest": {
+          "value": "#ffffff"
+        },
+        "lighter": {
+          "value": "#fafafa"
+        },
+        "light": {
+          "value": "#f1f1f1"
+        },
+        "dark": {
+          "value": "#cfcfcf"
+        },
+        "darker": {
+          "value": "#101010"
+        },
+        "darkest": {
+          "value": "#000000"
+        }
+      }
+    }
+  }
+}
