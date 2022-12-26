@@ -1,0 +1,21 @@
+{
+  "name": "@fem-aec/static-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fem-aec/tokens": "^1.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "rimraf": "^3.0.2",
+    "sass": "^1.57.1",
+    "vite": "^4.0.3"
+  }
+}
