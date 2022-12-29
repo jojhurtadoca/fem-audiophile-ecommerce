@@ -1,0 +1,85 @@
+@use "@fem-aec/tokens/dist/scss/mixins" as *;
+@use "@fem-aec/tokens/dist/scss/tokens" as *;
+
+.hero {
+  display: grid;
+
+  > * {
+    grid-area: 1/-1;
+  }
+
+  &__image {
+    object-fit: cover;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2.4rem;
+
+    @media screen and (min-width: 768px) {
+      padding: 0;
+      margin: auto;
+      max-width: 49.34%;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin-left: 11.46%;
+      text-align: start;
+      width: 26.32%;
+    }
+  }
+
+  &__title {
+    font-size: 4rem;
+    line-height: 3.6rem;
+    letter-spacing: $fem-text-heading-sans-100-space;
+    text-transform: uppercase;
+    margin: 8rem 0 2.4rem;
+    color: var(--fem-color-text-secondary-inverse);
+
+    @extend %fem-text-heading-sans-600;
+
+    @media screen and (min-width: 768px) {
+      margin-top: 2rem;
+      font-size: $fem-text-heading-sans-600-size;
+      line-height: $fem-text-heading-sans-600-height;
+      letter-spacing: $fem-text-heading-sans-600-space;
+    }
+  }
+
+  &__eyebrow {
+    display: block;
+    margin-bottom: 1.6rem;
+    color: var(--fem-color-text-primary-inverse);
+
+    @extend %fem-text-eyebrow-200;
+  }
+
+  &__body {
+    margin-bottom: 2.8rem;
+    color: var(--fem-color-text-primary-inverse);
+
+    @media screen and (min-width: 768px) {
+      margin: 0 auto 4rem;
+      max-width: 92.08%;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin: 0 0 4rem;
+    }
+  }
+
+  &__button {
+    display: inline-flex;
+    align-self: center;
+
+    @media screen and (min-width: 1440px) {
+      align-self: flex-start;;
+    }
+  }
+}
