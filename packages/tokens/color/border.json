@@ -1,0 +1,15 @@
+{
+  "color": {
+    "border": {
+      "primary": {
+        "value": "{config.color.neutral.lighter.value}",
+        "modify" : [
+          {
+            "type": "alpha",
+            "amount": 0.1
+          }
+        ]
+      }
+    }
+  }
+}

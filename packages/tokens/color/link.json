@@ -1,0 +1,31 @@
+{
+  "color": {
+    "text": {
+      "link": {
+        "primary": {
+          "rest": {
+            "value": "{config.color.neutral.lightest.value}"
+          },
+          "active": {
+            "value": "{config.color.primary.red.dark.value}"
+          },
+          "focus": {
+            "value": "{config.color.primary.red.dark.value}"
+          }
+        }
+      }
+    },
+    "border": {
+      "link": {
+        "primary": {
+          "active": {
+            "value": "{config.color.primary.red.dark.value}"
+          },
+          "focus": {
+            "value": "{config.color.primary.red.dark.value}"
+          }
+        }
+      }
+    }
+  }
+}
