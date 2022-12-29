@@ -111,6 +111,17 @@
             "value": "{config.color.primary.red.dark.value}"
           }
         },
+        "primary-inverse": {
+          "rest": {
+            "value": "{config.color.primary.red.dark.value}"
+          },
+          "active": {
+            "value": "{config.color.neutral.lightest.value}"
+          },
+          "focus": {
+            "value": "{config.color.neutral.lightest.value}"
+          }
+        },
         "secondary": {
           "rest": {
             "value": "{config.color.neutral.darkest.value}"
