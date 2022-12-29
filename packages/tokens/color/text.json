@@ -2,9 +2,27 @@
   "color": {
     "text": {
       "primary": {
-        "value": "{config.color.neutral.darkest.value}"
+        "value": "{config.color.neutral.darkest.value}",
+        "modify" : [
+          {
+            "type": "alpha",
+            "amount": 0.5
+          }
+        ]
+      },
+      "primary-inverse": {
+        "value": "{config.color.neutral.lightest.value}",
+        "modify" : [
+          {
+            "type": "alpha",
+            "amount": 0.75
+          }
+        ]
       },
       "secondary": {
+        "value": "{config.color.neutral.darkest.value}"
+      },
+      "secondary-inverse": {
         "value": "{config.color.neutral.lightest.value}"
       },
       "emphasis": {
