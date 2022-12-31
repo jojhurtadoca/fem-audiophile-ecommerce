@@ -22,6 +22,15 @@
       "secondary": {
         "value": "{config.color.neutral.darkest.value}"
       },
+      "tertiary": {
+        "value": "{config.color.neutral.lightest.value}",
+        "modify" : [
+          {
+            "type": "alpha",
+            "amount": 0.5
+          }
+        ]
+      },
       "secondary-inverse": {
         "value": "{config.color.neutral.lightest.value}"
       },
