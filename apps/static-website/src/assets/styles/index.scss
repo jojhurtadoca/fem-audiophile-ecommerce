@@ -3,8 +3,10 @@
 @use "global";
 
 // The following uses would become in module imports
-@use "components/header";
-@use "components/nav";
-@use "components/hero";
 @use "components/button";
 @use "components/link";
+@use "components/nav";
+@use "components/hero";
+@use "components/social";
+@use "components/header";
+@use "components/footer";
