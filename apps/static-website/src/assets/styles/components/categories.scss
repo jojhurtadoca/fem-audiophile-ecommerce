@@ -2,7 +2,7 @@
 @use "@fem-aec/tokens/dist/scss/tokens" as *;
 @use "@/assets/styles/mixins" as *;
 
-.feature {
+.categories {
   &__list {
     display: grid;
     gap: 16px 10px;
@@ -15,16 +15,16 @@
       column-gap: 30px;
     }
   }
+}
 
-  &__item {
-    position: relative;
-    display: grid;
-    place-items: center;
-    border-radius: 8px;
-    margin-top: 60px;
-    padding: 0 30px 30px;
-    background-color: var(--fem-color-background-secondary);
-  }
+.category {
+  position: relative;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  margin-top: 60px;
+  padding: 0 30px 30px;
+  background-color: var(--fem-color-background-secondary);
 
   &__image {
     margin-top: -60px;
