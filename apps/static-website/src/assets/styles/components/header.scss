@@ -3,11 +3,17 @@
 @use "@/assets/styles/mixins" as *;
 
 .header {
+  $no-border: #{&}--no-border;
+
   display: grid;
   background-color: var(--fem-color-background-tertiary);
 
   > * {
     grid-area: 1/-1;
+  }
+
+  &--no-overlap > * {
+    grid-area: auto;
   }
 
   &__top {
@@ -31,6 +37,10 @@
       padding-top: 3.2rem;
       padding-bottom: 3.6rem;
       width: 77.11%;
+    }
+
+    #{$no-border} & {
+      border-bottom: none;
     }
   }
 
