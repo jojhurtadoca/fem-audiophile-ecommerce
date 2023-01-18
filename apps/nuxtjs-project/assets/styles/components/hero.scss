@@ -1,0 +1,117 @@
+@use "@fem-aec/tokens/dist/scss/mixins" as *;
+@use "@fem-aec/tokens/dist/scss/tokens" as *;
+@use "@/assets/styles/mixins" as *;
+
+.hero {
+  $no-image: #{&}--no-image;
+
+  display: grid;
+
+  > * {
+    grid-area: 1/-1;
+  }
+
+  &__image {
+    @extend %image-cover;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2.4rem;
+
+    @media screen and (min-width: 768px) {
+      padding: 0;
+      margin: auto;
+      max-width: 49.34%;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin-left: 11.46%;
+      text-align: start;
+      width: 26.32%;
+    }
+
+    #{$no-image} & {
+      @media screen and (min-width: 1440px) {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+      }
+    }
+  }
+
+  &__title {
+    font-size: $fem-text-heading-sans-500-size;
+    line-height: $fem-text-heading-sans-400-height;
+    letter-spacing: $fem-text-heading-sans-100-space;
+    text-transform: uppercase;
+    margin: 8rem 0 2.4rem;
+    color: var(--fem-color-text-secondary-inverse);
+
+    @extend %fem-text-heading-sans-600;
+
+    @media screen and (min-width: 768px) {
+      margin-top: 2rem;
+      font-size: $fem-text-heading-sans-600-size;
+      line-height: $fem-text-heading-sans-600-height;
+      letter-spacing: $fem-text-heading-sans-600-space;
+    }
+
+    #{$no-image} & {
+      font-size: $fem-text-heading-sans-300-size;
+      line-height: $fem-text-heading-sans-300-height;
+      letter-spacing: $fem-text-heading-sans-300-space;
+      margin-bottom: 32px;
+      margin-top: 32px;
+
+      @extend %fem-text-heading-sans-500;
+
+      @media screen and (min-width: 768px) {
+        font-size: $fem-text-heading-sans-500-size;
+        line-height: $fem-text-heading-sans-500-height;
+        letter-spacing: $fem-text-heading-sans-500-space;
+        margin-bottom: 97px;
+        margin-top: 105px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        margin-top: 98px;
+      }
+    }
+  }
+
+  &__eyebrow {
+    display: block;
+    margin-bottom: 1.6rem;
+    color: var(--fem-color-text-primary-inverse);
+
+    @extend %fem-text-eyebrow-200;
+  }
+
+  &__body {
+    margin-bottom: 2.8rem;
+    color: var(--fem-color-text-primary-inverse);
+
+    @media screen and (min-width: 768px) {
+      margin: 0 auto 4rem;
+      max-width: 92.08%;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin: 0 0 4rem;
+    }
+  }
+
+  &__button {
+    display: inline-flex;
+    align-self: center;
+
+    @media screen and (min-width: 1440px) {
+      align-self: flex-start;;
+    }
+  }
+}

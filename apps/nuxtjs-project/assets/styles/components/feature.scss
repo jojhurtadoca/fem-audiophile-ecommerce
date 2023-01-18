@@ -1,0 +1,223 @@
+@use "@fem-aec/tokens/dist/scss/mixins" as *;
+@use "@fem-aec/tokens/dist/scss/tokens" as *;
+@use "@/assets/styles/mixins" as *;
+
+.feature {
+  $no-overlap-img: &;
+  $bg-img: &;
+  $alone-img: &;
+
+  &__list {
+    display: grid;
+    gap: 24px;
+
+    @media screen and (min-width: 768px) {
+      gap: 32px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      gap: 48px;
+    }
+  }
+
+  &__item {
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+
+  &__item--no-overlap-img {
+    $no-overlap-img: &;
+
+    border-radius: 8px;
+    text-align: center;
+    background-color: var(--fem-color-background-button-primary-rest); // TODO: Create proper token
+
+    @extend %icon-mask;
+
+    @media screen and (min-width: 1440px) {
+      text-align: start;
+    }
+
+    & > * {
+      grid-area: 1/-1;
+    }
+
+    &::after {
+      align-self: start;
+      height: 93%;
+      width: 171%;
+      mask-position: center top -121px;
+      mask-size: cover;
+      mask-image: url("@/assets/icons/pattern-circles.svg");
+      background-color: var(--fem-color-text-secondary-inverse);  // TODO: Create proper token
+
+      @media screen and (min-width: 768px) {
+        align-self: end;
+        height: 131%;
+        width: 137%;
+        mask-position: center bottom 64px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        height: 168.5%;
+        width: 85.05%;
+        mask-position: right 150px top 351px;
+        margin-left: -165px;
+      }
+    }
+  }
+
+  &__item--bg-img {
+    $bg-img: &;
+  }
+
+  &__item--alone-img {
+    $alone-img: &;
+  }
+
+  &__item-container {
+    display: grid;
+    gap: 32px;
+
+    #{$bg-img} & > * {
+      grid-area: 1/-1;
+    }
+
+    #{$no-overlap-img} & {
+      gap: 24px;
+      place-items: center;
+      padding: 0 24px 55px;
+
+      & > * {
+        grid-area: auto;
+      }
+
+      @media screen and (min-width: 768px) {
+        padding: 0 171px 64px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        grid-template-columns: auto 349px;
+        padding: 0 95px 0 117px;
+        column-gap: 139px;
+      }
+    }
+
+    #{$alone-img} & {
+      gap: 24px;
+
+      @media screen and (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 11px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        gap: 30px;
+      }
+    }
+  }
+
+  &__picture {
+    #{$no-overlap-img} & {
+      @media screen and (min-width: 1440px) {
+        margin-bottom: -20px;
+        align-self: end;
+      }
+    }
+  }
+
+  &__content {
+    display: grid;
+    gap: 32px;
+    align-content: center;
+    justify-items: start;
+    padding: 41px 24px;
+    z-index: 1;
+
+    @media screen and (min-width: 768px) {
+      padding: 101px 41px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      padding: 101px 95px;
+    }
+
+    #{$no-overlap-img} & {
+      gap: 24px;
+      justify-items: center;
+      padding: 0;
+
+      @media screen and (min-width: 1440px) {
+        align-self: start;
+      }
+    }
+
+    #{$alone-img} & {
+      border-radius: 8px;
+      background-color: var(--fem-color-background-secondary);
+    }
+  }
+
+  &__image {
+    @extend %image-cover;
+
+    #{$no-overlap-img} & {
+      width: 173px;
+      place-self: center;
+      margin: 55px 0 8px;
+
+      @media screen and (min-width: 768px) {
+        width: 197px;
+        margin: 52px 0 40px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        margin: 96px 0 0;
+        width: 410px;
+      }
+    }
+
+    #{$bg-img} &,
+    #{$alone-img} & {
+      border-radius: 8px;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    color: var(--fem-color-text-secondary);
+
+    @extend %fem-text-heading-sans-300;
+
+    #{$no-overlap-img} & {
+      font-size: $fem-text-heading-sans-400-height;
+      line-height: $fem-text-heading-sans-500-size;
+      letter-spacing: $fem-text-heading-sans-100-space;
+      padding: 0 20px;
+      color: var(--fem-color-text-secondary-inverse);
+
+      @media screen and (min-width: 768px) {
+        font-size: $fem-text-heading-sans-600-height;
+        line-height: $fem-text-heading-sans-600-size;
+        letter-spacing: $fem-text-heading-sans-600-space;
+      }
+
+      @media screen and (min-width: 1440px) {
+        margin-top: 133px;
+        padding: 0;
+      }
+    }
+  }
+
+  &__body {
+    #{$no-overlap-img} & {
+      color: var(--fem-color-text-primary-inverse);
+
+      @media screen and (min-width: 768px) {
+        margin-bottom: 16px;
+      }
+    }
+
+  }
+}

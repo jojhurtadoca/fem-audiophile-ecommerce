@@ -1,0 +1,121 @@
+@use "@fem-aec/tokens/dist/scss/mixins" as *;
+@use "@fem-aec/tokens/dist/scss/tokens" as *;
+@use "@/assets/styles/mixins" as *;
+
+.footer {
+  display: grid;
+  justify-items: center;
+  gap: 48px;
+  margin-top: 120px;
+  padding: 0 6.4% 38px;
+  background-color: var(--fem-color-background-tertiary);
+
+  @media screen and (min-width: 768px) {
+    gap: 32px;
+    margin-top: 160px;
+    padding: 0 5.2% 46px;
+    justify-items: start;
+  }
+
+  @media screen and (min-width: 1440px) {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 11.46% 48px;
+  }
+
+  &--margin {
+    @media screen and (min-width: 768px) {
+      margin-top: 96px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin-top: 200px;
+    }
+  }
+
+  > * {
+    @media screen and (min-width: 768px) {
+      grid-column: 1 / span 2;
+    }
+
+    @media screen and (min-width: 1440px) {
+      grid-column-end: auto;
+    }
+  }
+
+  &::before {
+    display: block;
+    content: "";
+    width: 101px;
+    height: 4px;
+    background-color: var(--fem-color-fill-icon-primary-active);
+  }
+
+  &__logo {
+    margin-top: 4px;
+
+    @media screen and (min-width: 768px) {
+      margin-top: 28px;
+    }
+  }
+
+  &__nav {
+    text-align: center;
+
+    @media screen and (min-width: 1440px) {
+      grid-area: 2 / 2;
+      align-self: end;
+      justify-self: end;
+    }
+
+    > .nav__list {
+      @media screen and (min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        gap: 3.4rem;
+      }
+    }
+  }
+
+
+  &__body,
+  &__bottom {
+    text-align: center;
+    color: var(--fem-color-text-tertiary);
+
+    @media screen and (min-width: 768px) {
+      text-align: start;
+    }
+  }
+
+  &__body {
+    @media screen and (min-width: 768px) {
+      margin-bottom: 48px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__bottom {
+    font-weight: $fem-text-heading-sans-100-weight; // TODO: Setup token
+  }
+
+  &__bottom {
+    @media screen and (min-width: 768px) {
+      grid-area: 5 / 1;
+    }
+  }
+
+  &__social {
+    @media screen and (min-width: 768px) {
+      grid-area: 5 / 2;
+      justify-self: end;
+    }
+
+    @media screen and (min-width: 1440px) {
+      align-self: end;
+      grid-row-start: 3;
+    }
+  }
+}

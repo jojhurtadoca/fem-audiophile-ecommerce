@@ -1,0 +1,45 @@
+@use "@fem-aec/tokens/dist/scss/mixins" as *;
+@use "@fem-aec/tokens/dist/scss/tokens" as *;
+@use "@/assets/styles/mixins" as *;
+
+.nav {
+  &__toggle {
+    cursor: pointer;
+    font-size: 0;
+    align-items: center;
+    justify-items: center;
+    padding: .4rem;
+    width: 24px;
+    height: 23px;
+
+    @extend %icon-mask;
+    @extend %color-animation;
+
+    @media screen and (min-width: 1440px) {
+      display: none;
+    }
+
+    &:is(:hover,:focus)::after {
+      background-color: var(--fem-color-fill-icon-primary-active);
+    }
+
+    &:focus {
+      box-shadow: inset 0 0 0 2px var(--fem-color-fill-icon-primary-focus);
+    }
+
+    &::after {
+      width: 16px;
+      height: 15px;
+      background-color: var(--fem-color-fill-icon-primary-rest);
+      mask-image: url("@/assets/icons/icon-hamburger.svg");
+
+      @extend %color-animation;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+}

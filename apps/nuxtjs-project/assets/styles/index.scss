@@ -1,0 +1,16 @@
+@use "@fem-aec/tokens/dist/css/colors.css";
+@use "resets";
+@use "global";
+
+// The following uses would become in module imports
+@use "components/button";
+@use "components/link";
+@use "components/nav";
+@use "components/hero";
+@use "components/social";
+@use "components/header";
+@use "components/main";
+@use "components/categories";
+@use "components/feature";
+@use "components/overview";
+@use "components/footer";
