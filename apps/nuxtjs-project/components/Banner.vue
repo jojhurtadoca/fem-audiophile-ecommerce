@@ -2,28 +2,33 @@
     <section class="hero">
       <div class="hero__top">
         <picture class="hero__picture">
-          <source
-            srcset="../assets/images/desktop/image-hero.jpg"
-            media="(min-width: 1440px)"
-          >
-          <source
-            srcset="../assets/images/tablet/image-hero.jpg"
-            media="(min-width: 768px)"
-          >
-          <img
-            class="hero__image"
-            src="../assets/images/mobile/image-hero.jpg"
-            alt="XX99 Mark 2 Headphones Image"
-          >
+          <source v-for="(value, name, index) in bannerData.pictures" :srcset="'_nuxt/' + value.src" :media="getResponsiveValue(name.toString())" :key="index">
+          <img class="hero__image" :src="'_nuxt/' + bannerData?.image?.src" :alt="bannerData?.image?.alt" >
         </picture>
       </div>
       <div class="hero__content">
         <h1 class="hero__title">
-          <span class="hero__eyebrow">New product</span>
-          XX99 Mark II Headphones
+          <span class="hero__eyebrow">{{ bannerData?.title?.span }}</span>
+          {{ bannerData?.title?.label }}
         </h1>
-        <p class="hero__body">Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
-        <a href="#" class="hero__button button__primary button__primary--inverse">See product</a>
+        <p class="hero__body">{{ bannerData?.text?.p }}</p>
+        <NuxtLink class="hero__button button__primary button__primary--inverse" :to="bannerData?.anchor?.url" >{{ bannerData?.anchor?.label }}</NuxtLink>
       </div>
     </section>
 </template>
+<script lang="ts">
+import { ResponsiveInfo } from '~~/store/model/responsiveInfo';
+import { store } from '~~/store/state/state';
+   export default{
+    setup() {
+      const useStore = store();
+      return { useStore }
+    },
+    props: ['bannerData'],
+    methods: {
+      getResponsiveValue(key: string): string {
+        return this.useStore.responsiveInfo[key as keyof ResponsiveInfo];
+      }
+    }
+  }
+</script>

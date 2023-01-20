@@ -1,33 +1,16 @@
 <template>
     <section class="categories">
       <ul class="categories__list">
-        <li class="category">
-          <img
-            class="category__image"
-            src="../assets/images/mobile/image-xx99-mark-one-headphones.png"
-            alt="XX99 Mark 1 headphones category image"
-          >
-          <p class="category__title">Headphones</p>
-          <a href="" class="category__link button__tertiary">Shop</a>
-        </li>
-        <li class="category">
-          <img
-            class="category__image"
-            src="../assets/images/mobile/image-zx9-speaker.png"
-            alt="ZX9 speaker category image"
-          >
-          <p class="category__title">Speakers</p>
-          <a href="" class="category__link button__tertiary">Shop</a>
-        </li>
-        <li class="category">
-          <img
-            class="category__image"
-            src="../assets/images/mobile/image-yx1-earphones.png"
-            alt="YX1 earphones category image"
-          >
-          <p class="category__title">Earphones</p>
-          <a href="" class="category__link button__tertiary">Shop</a>
+        <li class="category" v-for="(item,index) in categories" :key="index">
+          <img class="category__image" :src="'_nuxt/' + item?.image?.src" :alt="item?.image?.alt" >
+          <p class="category__title">{{ item?.name }}</p>
+          <NuxtLink class="category__link button__tertiary" :to="item?.anchor?.url" >Shop</NuxtLink>
         </li>
       </ul>
     </section>
 </template>
+<script lang="ts">
+   export default{
+    props: ['categories'],
+  }
+</script>

@@ -8,16 +8,16 @@
     <nav class="footer__nav nav" aria-label="Footer page navigation">
       <ul class="nav__list">
         <li class="nav__list-item">
-          <a href="" class="nav__link link__primary">Home</a>
+          <NuxtLink to="" class="nav__link link__primary">Home</NuxtLink>
         </li>
         <li class="nav__list-item">
-          <a href="" class="nav__link link__primary">Headphones</a>
+          <NuxtLink to="" class="nav__link link__primary">Headphones</NuxtLink>
         </li>
         <li class="nav__list-item">
-          <a href="" class="nav__link link__primary">Speakers</a>
+          <NuxtLink to="" class="nav__link link__primary">Speakers</NuxtLink>
         </li>
         <li class="nav__list-item">
-          <a href="" class="nav__link link__primary">Earphones</a>
+          <NuxtLink to="" class="nav__link link__primary">Earphones</NuxtLink>
         </li>
       </ul>
     </nav>
@@ -29,13 +29,13 @@
     <p class="footer__bottom">Copyright 2021. All Rights Reserved</p>
     <ul class="footer__social social">
       <li class="social__item">
-        <a href="" class="social__link social__icon social__icon--facebook">Facebook</a>
+        <NuxtLink to="" class="social__link social__icon social__icon--facebook">Facebook</NuxtLink>
       </li>
       <li class="social__item">
-        <a href="" class="social__link social__icon social__icon--twitter">Twitter</a>
+        <NuxtLink to="" class="social__link social__icon social__icon--twitter">Twitter</NuxtLink>
       </li>
       <li class="social__item">
-        <a href="" class="social__link social__icon social__icon--instagram">Instagram</a>
+        <NuxtLink to="" class="social__link social__icon social__icon--instagram">Instagram</NuxtLink>
       </li>
     </ul>
   </footer>

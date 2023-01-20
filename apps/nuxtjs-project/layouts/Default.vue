@@ -2,7 +2,7 @@
     <div>
       <Header />
         <main class="main">
-            <Nuxt />
+            <slot />
         </main>        
       <Footer />
     </div>
@@ -12,7 +12,7 @@ import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
 
 export default {
-  name: 'Default',
+  name: 'default',
   components: { Header, Footer },
 }
 </script>
