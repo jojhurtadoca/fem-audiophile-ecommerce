@@ -2,7 +2,6 @@
     import { ref } from 'vue';
     import { BannerModel } from '~~/store/model/Banner';
     import { Category } from '~~/store/model/Category';
-    import { ResponsiveInfo } from '~~/store/model/ResponsiveInfo';
     import setDataFromLocalStorageToStore from '~~/util/setDataToStore';
     import result from '../backend/pageData/index.json';
     import { store } from '../store/state/state';
@@ -13,7 +12,6 @@
     res.value.data = data;
     setDataFromLocalStorageToStore();
     document.title = title;
-    useStore.setResponsiveInfo(responsive as ResponsiveInfo); 
     useStore.setTitleComponent('');
 
 </script>

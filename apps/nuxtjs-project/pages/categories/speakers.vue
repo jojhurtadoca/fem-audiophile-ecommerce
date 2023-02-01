@@ -6,7 +6,6 @@
 
 <script lang="ts" setup>
     import { ref, onMounted } from 'vue';
-    import { ResponsiveInfo } from '~~/store/model/ResponsiveInfo';
     import setDataFromLocalStorageToStore from '~~/util/setDataToStore';
     import { store } from '../../store/state/state';
     import result from '../../backend/pageData/categories/speakers.json';
@@ -18,7 +17,6 @@
         res.value = result;
         setDataFromLocalStorageToStore();
         document.title = title;
-        useStore.setResponsiveInfo(responsive as ResponsiveInfo);
         useStore.setTitleComponent(result.h1);
     });
 </script>
