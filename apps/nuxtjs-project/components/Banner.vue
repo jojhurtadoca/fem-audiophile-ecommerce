@@ -2,7 +2,8 @@
     <section class="hero">
       <div class="hero__top">
         <picture class="hero__picture">
-          <source v-for="(value, name, index) in bannerData.pictures" :srcset="'_nuxt/' + value.src" :media="getResponsiveValue(name.toString())" :key="index">
+          <source v-if="bannerData?.pictures?.desktop" :srcset="'_nuxt/' + bannerData?.pictures?.desktop.src" :media="getResponsiveValue('desktop')" :key="1">
+          <source v-if="bannerData?.pictures?.tablet" :srcset="'_nuxt/' + bannerData?.pictures?.tablet.src" :media="getResponsiveValue('tablet')" :key="2">
           <img class="hero__image" :src="'_nuxt/' + bannerData?.image?.src" :alt="bannerData?.image?.alt" >
         </picture>
       </div>
@@ -12,23 +13,16 @@
           {{ bannerData?.title?.label }}
         </h1>
         <p class="hero__body">{{ bannerData?.text?.p }}</p>
-        <NuxtLink class="hero__button button__primary button__primary--inverse" :to="bannerData?.anchor?.url" >{{ bannerData?.anchor?.label }}</NuxtLink>
+        <NuxtLink class="hero__button button__primary button__primary--inverse" :to="bannerData?.anchor?.url || '/'" >{{ bannerData?.anchor?.label }}</NuxtLink>
       </div>
     </section>
 </template>
-<script lang="ts">
-import { ResponsiveInfo } from '~~/store/model/responsiveInfo';
-import { store } from '~~/store/state/state';
-   export default{
-    setup() {
-      const useStore = store();
-      return { useStore }
-    },
-    props: ['bannerData'],
-    methods: {
-      getResponsiveValue(key: string): string {
-        return this.useStore.responsiveInfo[key as keyof ResponsiveInfo];
-      }
-    }
-  }
+<script lang="ts" setup>
+  import { PropType } from 'vue';
+  import { BannerModel } from '~~/store/model/Banner';
+  import { getResponsiveValue } from '~~/util/storeUtil';
+
+  defineProps({
+    bannerData: Object as PropType<BannerModel>,
+  });
 </script>

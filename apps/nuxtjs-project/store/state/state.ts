@@ -1,14 +1,15 @@
 import { defineStore } from 'pinia';
 import { setItemLocalStorage } from '~~/util/localStorageService';
 import { ProductCart } from '../model/ProductCart';
-import { ResponsiveInfo } from '../model/responsiveInfo';
+import { ResponsiveInfo } from '../model/ResponsiveInfo';
 
 export const store = defineStore('store', {
   // arrow function recommended for full type inference
   state: () => {
     return {
       productsInCart: [] as ProductCart[],
-      responsiveInfo: {} as ResponsiveInfo
+      responsiveInfo: {} as ResponsiveInfo,
+      titleComponent: ''
     }
   },
   actions: {
@@ -34,6 +35,9 @@ export const store = defineStore('store', {
     },
     setResponsiveInfo(responsive: ResponsiveInfo): void {
         this.responsiveInfo = {...responsive};;
+    },
+    setTitleComponent(title: string): void {
+      this.titleComponent = title;
     }
   },
 });

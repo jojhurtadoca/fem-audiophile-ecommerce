@@ -1,38 +1,28 @@
-<template>
-    <div>
-      <Banner :banner-data="result.data.bannerData" />
-      <Categories :categories="result.data.categories" />
-      <Features :features="result.data.features"/>
-      <Overview :overview="result.data.overview"/>
-    </div>  
-</template>
-<script lang="ts">
-    import { ResponsiveInfo } from '~~/store/model/responsiveInfo';
+<script lang="ts" setup>
+    import { ref } from 'vue';
+    import { BannerModel } from '~~/store/model/Banner';
+    import { Category } from '~~/store/model/Category';
+    import { ResponsiveInfo } from '~~/store/model/ResponsiveInfo';
     import setDataFromLocalStorageToStore from '~~/util/setDataToStore';
     import result from '../backend/pageData/index.json';
     import { store } from '../store/state/state';
-    export default defineNuxtComponent({
-        setup() {
-            const useStore = store();
-            return { useStore };
-        },
-        head() {
-            return {
-                title: result.title
-            }
-        },
-        data() {
-            return {
-                result
-            }
-        },
-        beforeCreate() {
-            this.useStore.setResponsiveInfo(result.responsive as ResponsiveInfo);
-            //We have to get the info from localStorage
-        },
-        create() {
-            //We have to get the info from localStorage
-            setDataFromLocalStorageToStore();
-        }
-    })
+
+    const res = ref({ title : '', responsive: {}, data: { bannerData: {} as BannerModel, categories: [] as Array<Category>, features: {}, overview: {}}});
+    const useStore = store();
+    const { data, title, responsive } = result;
+    res.value.data = data;
+    setDataFromLocalStorageToStore();
+    document.title = title;
+    useStore.setResponsiveInfo(responsive as ResponsiveInfo); 
+    useStore.setTitleComponent('');
+
 </script>
+
+<template>
+    <div>
+      <Banner :banner-data="res.data.bannerData" />
+      <Categories :categories="res.data.categories" />
+      <Features :features="res.data.features"/>
+      <Overview :overview="res.data.overview"/>
+    </div>  
+</template>

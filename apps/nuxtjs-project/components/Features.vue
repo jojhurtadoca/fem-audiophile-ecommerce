@@ -11,8 +11,10 @@
       </section>
     </div>    
 </template>
-<script lang="ts">
-   export default{
-    props: ['features'],
-  }
+<script lang="ts" setup>
+  import { PropType } from 'vue';
+  import { Features } from '~~/store/model/Features';
+  defineProps({
+    features: { type: Object as PropType<Features>, default: [] },
+  });
 </script>

@@ -1,7 +1,9 @@
-import { ProductImage } from "./ProductImage";
+import { Image } from "./Image";
 
 export interface Product {
     title: string,
-    images: ProductImage,
-    description?: string
+    image: Image,
+    description?: string,
+    newProduct?: boolean,
+    id?: number
 }

@@ -38,7 +38,8 @@
                 },
                 "name": "Headphones",
                 "anchor": {
-                    "url": ""
+                    "url": "",
+                    "label":"See product"
                 }
             },
             {
@@ -48,7 +49,8 @@
                 },
                 "name": "Speakers",
                 "anchor": {
-                    "url": ""
+                    "url": "",
+                    "label":"See product"
                 }
             },
             {
@@ -58,7 +60,8 @@
                 },
                 "name": "Earphones",
                 "anchor": {
-                    "url": ""
+                    "url": "",
+                    "label":"See product"
                 }
             }
         ],

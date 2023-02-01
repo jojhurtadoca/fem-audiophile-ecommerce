@@ -13,13 +13,14 @@
     "@nuxt/vite-builder": "^3.0.0",
     "@pinia/nuxt": "^0.4.6",
     "pinia": "^2.0.29",
-    "primeflex": "^3.2.1",
-    "primeicons": "^6.0.1",
-    "primevue": "^2.10.0",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "vue":"^3.2.45"
   },
   "devDependencies": {
-    "nuxt": "^3.0.0"
+    "nuxt": "^3.0.0",
+    "primeflex": "^3.2.1",
+    "primeicons": "^6.0.1",
+    "primevue": "^3.23.0"
   },
   "overrides": {
     "vue": "latest"

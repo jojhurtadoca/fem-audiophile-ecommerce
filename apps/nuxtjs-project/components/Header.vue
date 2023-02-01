@@ -7,27 +7,40 @@
           alt="Audiophile logo"
         >
         <nav class="header__nav nav" aria-label="Main page navigation">
-          <button class="nav__toggle">
-            Toggle main navigation
-          </button>
           <ul class="nav__list">
             <li class="nav__list-item">
-              <NuxtLink to="" class="nav__link link__primary">Home</NuxtLink>
+              <NuxtLink to="/" class="nav__link link__primary">Home</NuxtLink>
             </li>
             <li class="nav__list-item">
-              <NuxtLink to="" class="nav__link link__primary">Headphones</NuxtLink>
+              <NuxtLink to="/categories/headphones" class="nav__link link__primary">Headphones</NuxtLink>
             </li>
             <li class="nav__list-item">
-              <NuxtLink to="" class="nav__link link__primary">Speakers</NuxtLink>
+              <NuxtLink to="/categories/speakers" class="nav__link link__primary">Speakers</NuxtLink>
             </li>
             <li class="nav__list-item">
-              <NuxtLink to="" class="nav__link link__primary">Earphones</NuxtLink>
+              <NuxtLink to="/categories/earphones" class="nav__link link__primary">Earphones</NuxtLink>
             </li>
           </ul>
+          <SidebarComponent />
         </nav>
         <button class="header__cart">
           Add to cart
         </button>
       </section>
+      <TitleComponent :title="title" v-if="title && title !== ''" />
     </header>
 </template>
+<script lang="ts" setup>
+  import { store } from '~~/store/state/state';
+  const useStore = store();
+
+  const title = ref('');
+  watch(
+    useStore.$state,
+    (state) => {
+      title.value = state.titleComponent;
+    },
+    { deep: true }
+  );
+
+</script>

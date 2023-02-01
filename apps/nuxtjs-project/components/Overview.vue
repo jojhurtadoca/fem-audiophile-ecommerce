@@ -1,10 +1,11 @@
 <template>
     <section class="overview">
       <picture class="overview__picture">
-        <source v-for="(value, name, index) in overview.pictures" :srcset="'_nuxt/' + value.src" :media="getResponsiveValue(name.toString())" :key="index">
+        <source v-if="overview?.pictures?.desktop" :srcset="'/_nuxt/' + overview?.pictures?.desktop.src" :media="getResponsiveValue('desktop')" :key="1">
+          <source v-if="overview?.pictures?.tablet" :srcset="'/_nuxt/' + overview?.pictures?.tablet.src" :media="getResponsiveValue('tablet')" :key="2">
         <img
           class="overview__image"
-          :src="'_nuxt/' + overview?.image?.src"
+          :src="'/_nuxt/' + overview?.image?.src"
           :alt="overview?.image?.alt"
         >
       </picture>
@@ -16,19 +17,12 @@
       </p>
     </section>
 </template>
-<script lang="ts">
-  import { ResponsiveInfo } from '~~/store/model/responsiveInfo';
-  import { store } from '~~/store/state/state';
-   export default{
-    setup() {
-      const useStore = store();
-      return { useStore }
-    },
-    props: ['overview'],
-    methods: {
-      getResponsiveValue(key: string): string {
-        return this.useStore.responsiveInfo[key as keyof ResponsiveInfo];
-      }
-    }
-  }
+<script lang="ts" setup>
+  import { PropType } from 'vue';
+  import { Overview } from '~~/store/model/Overview';
+  import { getResponsiveValue } from '~~/util/storeUtil';
+  
+  defineProps({
+    overview: { type:  Object as PropType<Overview>, default: {} },
+  });
 </script>
