@@ -1,0 +1,136 @@
+@use "@fem-aec/tokens/dist/scss/mixins" as *;
+@use "@fem-aec/tokens/dist/scss/tokens" as *;
+@use "@/assets/styles/mixins" as *;
+
+.cart {
+
+    display: grid;
+    gap: 32px;
+
+    &__header {
+        display: flex;
+        align-content: space-between;
+        &-title {
+            width: 100%;
+            @extend %fem-text-button-primary;
+            line-height: 2.5rem;
+        }
+
+        &-remove-all {
+            @extend %fem-text-body-100;
+            width: 100%;
+            text-align: right;
+            font-weight: 500;
+            font-size: 1.3rem;
+            text-decoration-line: underline;
+            color: var(--fem-color-text-button-secondary-rest);
+        }
+    }
+
+        .product__cart {
+            display: grid;
+            gap: 24px;
+            &-list{
+                display: flex;
+                gap:16px;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                &-data {
+                    margin-top:7px;
+                }
+                &-image {
+                    height: 64px;
+                    width: 64px;
+                }
+                &-title{
+                    @extend %fem-text-body-100;
+                    color: var(--fem-color-text-button-secondary-rest);
+                    font-weight: 700;
+                }
+
+                &-price, &-p-quantity {
+                    @extend %fem-text-body-100;
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    color: rgb(0, 0, 0,0.5);
+                }
+
+                &-p-quantity {
+                    margin-top:7px;
+                }
+
+                &-input-quantity{
+                    display: flex;
+                    gap: 16px;
+                    height: 32px;
+                    margin-top: 7px;
+                  
+                    .p-inputtext {
+                        @extend %fem-text-button-primary;
+                        width: 40px;
+                        text-align: center;
+                        border: none;
+                        color: var(--fem-color-text-button-secondary-rest);
+                        background-color: var(--fem-color-background-secondary);
+                    }                  
+                }
+            }
+        }
+&__total {
+    display: flex;
+
+    &-title {
+        @extend %fem-text-body-100;
+        flex: 1 50%;
+        color: var(--fem-color-text-button-secondary-rest);
+    }
+
+    &-value {
+        @extend %fem-text-button-primary;
+        line-height: 2.5rem;
+        flex: 1 50%;
+        color: var(--fem-color-text-button-secondary-rest);
+        text-align: right;
+    }
+}
+
+&__checkout {
+    .checkout-button {
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+}
+
+.empty__cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 100%;
+
+    &-text {
+        @extend %fem-text-body-100;
+        font-size: 1.2rem;
+        color: var(--fem-color-text-button-secondary-rest);
+        text-align: center;
+    }
+}
+
+&__dialog {
+
+    @media screen and (min-width: 768px) {
+        position: absolute;
+        top: 114px;
+        right: 5.21%;
+        width: 377px;
+    }
+
+    @media screen and (min-width: 1440px) {
+        position: absolute;
+        top: 114px;
+        right: 11.46%;
+    }
+ }
+    
+}

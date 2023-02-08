@@ -1,18 +1,35 @@
 <template>
   <div>
-    <section class="product">
+    <div class="product">
       <ul class="product__list">
-        <li class="product__item" v-for="item in productList.products" :key="item.id">
-          <ProductCard :product="item" />
+        <li
+          v-for="(item, index) in productList"
+          :key="index"
+          class="product__item"
+        >
+          <ProductCard
+            :product="item"
+            :show-description="showDescription"
+            :show-new-product-label="showNewProductLabel"
+            :show-full-title="showFullTitle"
+            :odd="index % 2 !== 0 && oddValidation"
+            :oddValidation="oddValidation"
+          />
         </li>
       </ul>
-    </section>
+    </div>
   </div>
 </template>
 <script lang="ts" setup>
-    import { PropType } from 'vue';
-    import { ProductList } from '~~/store/model/ProductList';
-    defineProps({
-        productList: { type: Object as PropType<ProductList>, default: [] },
-    });
+import { Product } from "~~/store/model/Product";
+defineProps({
+  productList: { type: Array<Product>, default: [] },
+  showDescription: { type: Boolean, default: true },
+  showNewProductLabel: { type: Boolean, default: true },
+  showFullTitle: { type: Boolean, default: true },
+  oddValidation: { type: Boolean, default: false },
+});
 </script>
+<style lang="scss">
+@use "../assets/styles/components/product.scss";
+</style>

@@ -1,18 +1,18 @@
 <template>
-    <div>
-      <Header />
-        <main class="main">
-            <slot />
-        </main>        
-      <Footer />
-    </div>
+  <div>
+    <Header />
+    <main class="main">
+      <slot />
+    </main>
+    <Footer />
+  </div>
 </template>
 <script>
-import Header from '../components/Header.vue';
-import Footer from '../components/Footer.vue';
+import Header from "../components/Header.vue";
+import Footer from "../components/Footer.vue";
 
 export default {
-  name: 'default',
+  name: "Default",
   components: { Header, Footer },
-}
+};
 </script>

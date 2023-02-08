@@ -2,6 +2,10 @@
 @use "@fem-aec/tokens/dist/scss/tokens" as *;
 @use "@/assets/styles/mixins" as *;
 
+button {
+  cursor: pointer;
+}
+
 .button {
   &__primary {
     padding: 1.5rem 3rem;
@@ -24,15 +28,14 @@
 
   &__primary--inverse {
     &:is(:hover, :focus) {
-      box-shadow: inset 0 0 0 2px var(--fem-color-border-button-primary-inverse-focus);
+      box-shadow: inset 0 0 0 2px
+        var(--fem-color-border-button-primary-inverse-focus);
     }
   }
 
-  &__secondary {
+  &__secondary, &__transparent {
     padding: 1.5rem 3rem;
     text-transform: uppercase;
-    background-color: var(--fem-color-border-button-secondary-rest);
-    color: var(--fem-color-text-button-secondary-rest);
     box-shadow: inset 0 0 0 2px var(--fem-color-border-button-secondary-rest);
 
     @extend %fem-text-button-secondary;
@@ -47,14 +50,25 @@
     }
   }
 
+  &__secondary {
+    background-color: var(--fem-color-border-button-secondary-rest);
+    color: var(--fem-color-background-button-secondary-rest);
+  }
+
+  &__transparent {
+    background-color: transparent;
+    color: var(--fem-color-text-button-secondary-rest);
+  }
+
   &__secondary--inverse {
     &:is(:hover, :focus) {
-      box-shadow: inset 0 0 0 2px var(--fem-color-border-button-secondary-inverse-focus);
+      box-shadow: inset 0 0 0 2px
+        var(--fem-color-border-button-secondary-inverse-focus);
     }
   }
 
-
   &__tertiary {
+    cursor: pointer;
     background-color: var(--fem-color-background-button-tertiary-rest);
     color: var(--fem-color-text-button-tertiary-rest);
     box-shadow: inset 0 0 0 2px var(--fem-color-background-button-tertiary-rest);

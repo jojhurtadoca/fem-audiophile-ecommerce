@@ -1,3 +1,3 @@
 export interface Source {
-    src: string
+  src: string;
 }

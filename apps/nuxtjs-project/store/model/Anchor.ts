@@ -1,4 +1,4 @@
 export interface Anchor {
-    url: string,
-    label: string
+  url: string;
+  label?: string;
 }

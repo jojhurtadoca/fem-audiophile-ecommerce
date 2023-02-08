@@ -1,3 +1,3 @@
 export interface Text {
-    p: string,
+  p: string;
 }

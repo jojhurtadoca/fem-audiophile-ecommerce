@@ -1,34 +1,27 @@
 <template>
-    <div>
-        <button class="nav__toggle" @click="sidebarVisible = true">
-            Toggle main navigation
-        </button>
-        <Sidebar v-model:visible="sidebarVisible" class="p-sidebar-sm" :baseZIndex="10000">
-            <ul class="sidebar">
-                <li class="sidebar__element">
-                    <NuxtLink to="/" class="nav__link link__primary">Home</NuxtLink>
-                </li>
-                <li class="sidebar__element">
-                    <NuxtLink to="/categories/headphones" class="nav__link link__primary">Headphones</NuxtLink>
-                </li>
-                <li class="sidebar__element">
-                    <NuxtLink to="/categories/speakers" class="nav__link link__primary">Speakers</NuxtLink>
-                </li>
-                <li class="sidebar__element">
-                    <NuxtLink to="/categories/earphones" class="nav__link link__primary">Earphones</NuxtLink>
-                </li>
-            </ul>
-        </Sidebar>
-    </div>    
+  <nav class="header__nav nav" aria-label="Main page navigation">
+    <button class="nav__toggle" @click="isVisible = true">
+      Toggle main navigation
+    </button>
+    <Sidebar
+      v-model:visible="isVisible"
+      class="p-sidebar-sm"
+      :base-z-index="10000"
+      v-if="isMobile"
+    >
+      <NavigationElements :is-mobile="true" />
+    </Sidebar>
+    <NavigationElements v-if="!isMobile" :is-mobile="false" />
+  </nav>
 </template>
 <script lang="ts" setup>
-  import Sidebar from 'primevue/sidebar';
-  import { onMounted } from 'vue';
-
-  const sidebarVisible = ref(false);
-
-  onMounted(() => {
-    window.addEventListener('resize', () => sidebarVisible.value = false);
-  });
-
+import Sidebar from "primevue/sidebar";
+defineProps({
+  isMobile: { type: Boolean, default: false },
+});
+const isVisible = ref(false);
 </script>
+<style lang="scss">
+@use "../assets/styles/components/sidebar.scss";
+@use "../assets/styles/components/link.scss";
+</style>

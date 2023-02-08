@@ -1,4 +1,4 @@
 export interface BannerTitle {
-    span: string,
-    label: string,
+  span: string;
+  label: string;
 }

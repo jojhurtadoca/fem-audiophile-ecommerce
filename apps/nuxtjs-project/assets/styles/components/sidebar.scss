@@ -1,12 +1,12 @@
 .p-sidebar-sm {
-    background-color: var(--fem-color-text-button-secondary-rest) !important;
+  background-color: var(--fem-color-text-button-secondary-rest) !important;
 }
 
 .sidebar {
-    display: grid;
-    gap: 24px;
+  display: grid;
+  gap: 24px;
 
-    &__element {
-        text-align: center;
-    }
+  &__element {
+    text-align: center;
+  }
 }

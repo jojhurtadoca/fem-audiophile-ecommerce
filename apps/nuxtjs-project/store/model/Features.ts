@@ -1,5 +1,5 @@
 import { Feature } from "./Feature";
 
 export interface Features {
-    articles?: Array<Feature>,
+  articles?: Array<Feature>;
 }

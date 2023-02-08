@@ -3,16 +3,16 @@
 @use "@/assets/styles/mixins" as *;
 
 .title {
-    top: 94px;
-    height: 243px;
-    background-color:  var(--fem-color-background-tertiary);
+  top: 94px;
+  height: 243px;
+  background-color: var(--fem-color-background-tertiary);
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    h1 {
-        @extend %fem-text-heading-sans-400;
-        color: var(--fem-color-background-button-secondary-rest);
-    }
+  h1 {
+    @extend %fem-text-heading-sans-400;
+    color: var(--fem-color-background-button-secondary-rest);
+  }
 }

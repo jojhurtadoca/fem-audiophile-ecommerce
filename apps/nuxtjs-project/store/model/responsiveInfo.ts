@@ -1,4 +1,4 @@
 export interface ResponsiveInfo {
-    tablet: string,
-    desktop: string
+  tablet: string;
+  desktop: string;
 }

@@ -8,7 +8,7 @@
     font-size: 0;
     align-items: center;
     justify-items: center;
-    padding: .4rem;
+    padding: 0.4rem;
     width: 24px;
     height: 23px;
 
@@ -19,7 +19,7 @@
       display: none;
     }
 
-    &:is(:hover,:focus)::after {
+    &:is(:hover, :focus)::after {
       background-color: var(--fem-color-fill-icon-primary-active);
     }
 
